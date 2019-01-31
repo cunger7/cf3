@@ -7,7 +7,7 @@
       <% @products.each do |product| %>
         <div class="col-sm-12 col-md-4 shadow p-3 mb-5 bg-white rounded">
           <div class="product">
-            <%= image_tag(product.image_url, class: 'img-fluid') %>
+            <%= link_to image_tag(product.image_url, class: 'img-fluid'), product_path(product) unless product.image_url.nil? %>
           </div>
           <h4 class="text-center"><%= product.name %></h4>
         </div>
