@@ -1,3 +1,42 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+  color: #FF5A5F;
+}
+
+.site-title {
+  font-family: 'ZCOOL KuaiLe';
+}
+
+.product {
+  text-align: center;
+  height: 30vh;
+}
+
+.product-featured {
+
+}
+
+.img-fluid {
+  height: 100%;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.landing-hero {
+  background-image: image-url("checkbg.png");
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  text-align: center;
+}
