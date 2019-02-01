@@ -41,6 +41,12 @@
           <li class="nav-item">
             <%= link_to "Contact", simple_pages_contact_path, class: 'nav-link' %>
           </li>
+          <li clas="nav-item">
+            <a href="#" class="notice nav-link"><%= notice %></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="alert nav-link"><%= alert %></a>
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -56,9 +62,19 @@
           <li class="nav-item">
             <%= link_to "Orders", orders_path, class: 'nav-link' %>
           </li>
+          <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+          </li>
+          <% end %>
         </ul>
       </div>
     </nav>
+
     <%= yield %>
     <footer class="footer bg-dark text-light ">
       <div class="container">
