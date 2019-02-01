@@ -1,1 +1,14 @@
-<h1 class="site-title"><%= order.name %></h1>
+<div class="container">
+  <h1 class="site-title">Order Information</h2>
+  <div class="row">
+    <div class="col-sm-12">
+      <strong>Order ID: </strong><%= @order.id %>
+      <br>
+      <strong>Product Name: </strong><%= @order.product.name %>
+      <br>
+      <strong>Product Price: </strong><%= number_to_currency(@order.product.price/1.to_f) %>
+      <br>
+      <strong>Total Price: </strong><%= number_to_currency(@order.total/1.to_f) %>
+    </div>
+  </div>
+</div>
