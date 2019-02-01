@@ -44,6 +44,13 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <%= form_with(url: products_path, method: 'get', local: true, class:'form-inline') do |form| %>
+              <%= form.label :q, 'Search for: ', class: 'nav-link' %>
+              <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control mr-sm-2' %>
+              <%= form.submit 'Search', class: 'btn btn-outline-primary my-2 my-sm-0' %>
+            <% end %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Play", play_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
