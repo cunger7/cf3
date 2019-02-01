@@ -1,0 +1,21 @@
+<div class="jumbotron jumbotron-fluid landing-hero">
+  <div class="container">
+    <h1 class="display-4 site-title">Blunder Chess</h1>
+    <h3 class="display-6">Chess sets, boards, and more!<h3p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3 class="">Featured Products</h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4 shadow p-3 mb-5 bg-white rounded">
+      <div class="product product-featured">
+        <%= link_to image_tag(@featured_product.image_url, class: "img-fluid"), product_path(@featured_product) %>
+      </div>
+      <h4 class="text-center"><%= @featured_product.name %></h4>
+      </div>
+    </div>
+  </div>
+</div>
