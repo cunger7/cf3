@@ -9,13 +9,16 @@
   <div class="row">
     <h3 class="">Featured Products</h3>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-4 shadow p-3 mb-5 bg-white rounded">
-      <div class="product product-featured">
-        <%= link_to image_tag(@featured_product.image_url, class: "img-fluid"), product_path(@featured_product) %>
-      </div>
-      <h4 class="text-center"><%= @featured_product.name %></h4>
-      </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <%= render @products %>
     </div>
+    <ol class="carousel-indicators">
+      <% i=0%>
+      <% @products.each do |product|%>
+        <li class="text-shadow" data-target="#carouselExampleIndicators" data-slide-to="<%=i%>" class="<%= "active" if product == @products.first%>"></li>
+      <%i+=1%>
+      <% end %>
+    </ol>
   </div>
 </div>
